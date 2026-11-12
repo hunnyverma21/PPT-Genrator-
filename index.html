@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>PowerPoint Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon">P</span><div><strong>SlideCraft</strong><small>PowerPoint Generator</small></div></div>
+      <button id="downloadTop" class="download-top">↓ Export PPTX</button>
+    </header>
+
+    <section class="intro">
+      <span class="eyebrow">PRESENTATION BUILDER</span>
+      <h1>Turn your ideas into slides.</h1>
+      <p>Create a presentation, add your content, choose a theme, and export it as a PowerPoint file.</p>
+    </section>
+
+    <section class="builder">
+      <aside class="sidebar">
+        <div class="section-heading"><h2>Your slides</h2><button id="addSlide" class="add">＋ Add slide</button></div>
+        <div id="slideList" class="slide-list"></div>
+        <div class="tip">Tip: Keep each slide focused on one main idea.</div>
+      </aside>
+
+      <section class="editor">
+        <div class="editor-head"><div><span class="eyebrow">SLIDE EDITOR</span><h2 id="editorTitle">Edit slide 1</h2></div><button id="deleteSlide" class="delete">Delete slide</button></div>
+
+        <label for="presentationTitle">Presentation title</label>
+        <input id="presentationTitle" type="text" value="My Presentation" maxlength="100">
+
+        <label for="slideTitle">Slide title</label>
+        <input id="slideTitle" type="text" value="Welcome to my presentation" maxlength="120">
+
+        <label for="slideBody">Slide content</label>
+        <textarea id="slideBody" rows="7" placeholder="Write your points here. Put each bullet on a new line.">Introduce your topic
+Share the main objective
+Explain what your audience will learn</textarea>
+        <p class="field-help">Put each bullet point on a separate line.</p>
+
+        <div class="options">
+          <div><label for="theme">Presentation theme</label>
+            <select id="theme">
+              <option value="midnight">Midnight Blue</option>
+              <option value="violet">Modern Violet</option>
+              <option value="forest">Forest Green</option>
+              <option value="minimal">Clean Minimal</option>
+            </select>
+          </div>
+          <div><label for="layout">Slide layout</label>
+            <select id="layout">
+              <option value="content">Title + bullets</option>
+              <option value="title">Title slide</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="preview-heading"><div><span class="eyebrow">LIVE PREVIEW</span><h2>Slide preview</h2></div><span id="slideCount" class="count">1 slide</span></div>
+        <div id="preview" class="slide-preview theme-midnight">
+          <div class="preview-kicker">MY PRESENTATION</div>
+          <h3 id="previewTitle">Welcome to my presentation</h3>
+          <ul id="previewBullets"><li>Introduce your topic</li><li>Share the main objective</li><li>Explain what your audience will learn</li></ul>
+          <span class="preview-number">01</span>
+        </div>
+        <div class="bottom-actions"><button id="addAnother" class="secondary">＋ Add another slide</button><button id="download" class="primary">Download PowerPoint (.pptx) ↓</button></div>
+        <p id="status" class="status" role="status">Your presentation is ready to edit.</p>
+      </section>
+    </section>
+    <footer>SlideCraft · Create presentations in your browser</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
